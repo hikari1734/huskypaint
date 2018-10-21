@@ -1,6 +1,7 @@
 package program;
 
 import java.awt.Color;
+import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -14,6 +15,7 @@ import javax.swing.JPanel;
  */
 public class Controller implements MouseListener,MouseMotionListener{
 	JPanel drawPanel;//We need a reference to the DrawPanel used by the program.
+	public static Point coordinatesOfPreviousMouseEvent = null;
 	public Controller() {
 
 	}
@@ -33,15 +35,20 @@ public class Controller implements MouseListener,MouseMotionListener{
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
+		//Draw a black circle with a diameter of 10 at the coordinates of the mouse on the image
+		Point coordinatesOfEventRelativeToImage = new Point(e.getPoint().x-DrawPanel.cameraCoords.x, e.getPoint().y-DrawPanel.cameraCoords.y);
+		DrawPanel.applyPaintBrush(coordinatesOfEventRelativeToImage, 10, new Color(0,0,0));
+
 		//Update the canvas so changes will be visible
 		drawPanel.repaint();
+
+		//Update the coordinates of the previous mouse event
+		coordinatesOfPreviousMouseEvent = e.getPoint();
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		//Draw a dot at the coordinates of this event
-		DrawPanel.paint(e.getPoint());
-		
+
 		//Update the canvas so changes will be visible
 		drawPanel.repaint();
 	}
@@ -54,17 +61,24 @@ public class Controller implements MouseListener,MouseMotionListener{
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		//Draw a dot at the coordinates of this event
-		DrawPanel.paint(e.getPoint());
-		
+		//Draw a black circle with a diameter of 10 at the coordinates of the mouse event
+		Point coordinatesOfEventRelativeToImage = new Point(e.getPoint().x-DrawPanel.cameraCoords.x, e.getPoint().y-DrawPanel.cameraCoords.y);
+		DrawPanel.applyPaintBrush(coordinatesOfEventRelativeToImage, 10, new Color(0,0,0));
+
 		//Update the canvas so changes will be visible
 		drawPanel.repaint();
+
+		//Update the coordinates of the previous mouse event
+		coordinatesOfPreviousMouseEvent = e.getPoint();
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		//Update the canvas so changes will be visible
 		drawPanel.repaint();
+
+		//Update the coordinates of the previous mouse event to null since the button has been released since then
+		coordinatesOfPreviousMouseEvent = null;
 	}
 
 	@Override

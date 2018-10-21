@@ -1,9 +1,11 @@
 package program;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JButton;
@@ -58,16 +60,33 @@ public class DrawPanel extends JPanel{
 	}
 
 	/**
-	 * Draw a dot at the specified coordinate
-	 * @param coordinates
+	 * Draw a dot at the specified coordinate on the image that's being worked on.
+	 * 
+	 * @param coordinate - The center of the dot of color to be painted.
+	 * @param diameter - The diameter of the dot.
+	 * @param color - The color of the dot.
 	 */
-	public static void paint(Point coordinates) {
+	public static void applyPaintBrush(Point coordinate, int diameter, Color color) {
+		Graphics2D g = (Graphics2D)imageBeingWorkedOn.getGraphics();
+		int radius = diameter/2;
 		//If the mouse is inside the image being edited
-		if(coordinates.getX()>=DrawPanel.cameraCoords.x&&coordinates.getX()<DrawPanel.cameraCoords.x+DrawPanel.imageBeingWorkedOn.getWidth()) {
-			if(coordinates.getY()>=DrawPanel.cameraCoords.y&&coordinates.getY()<DrawPanel.cameraCoords.y+DrawPanel.imageBeingWorkedOn.getHeight()) {
-
-				//Draw a black dot on the image where it was clicked
-				imageBeingWorkedOn.setRGB((int)coordinates.getX()-(int)cameraCoords.x, (int)coordinates.getY()-(int)cameraCoords.y, Color.BLACK.getRGB());
+		if(coordinate.getX()>=0&&coordinate.getX()<imageBeingWorkedOn.getWidth()) {
+			if(coordinate.getY()>=0&&coordinate.getY()<imageBeingWorkedOn.getHeight()) {
+				
+				g.setColor(color);
+				
+				//if the mouse has been dragged
+				if(Controller.coordinatesOfPreviousMouseEvent!=null) {
+					//Draw a line between the previous mouse position and the current mouse position.
+					BasicStroke stroke = new BasicStroke(diameter, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);//The line should have a width equal to diameter and rounded edges
+					g.setStroke(stroke);
+					g.draw(new Line2D.Float(coordinate.x,coordinate.y, Controller.coordinatesOfPreviousMouseEvent.x-cameraCoords.x, Controller.coordinatesOfPreviousMouseEvent.y-cameraCoords.y));
+				}
+				//if the mouse has just been pressed instead of being dragged
+				else {
+					g.setColor(color);
+					g.fillOval(coordinate.x-radius, coordinate.y-radius, diameter, diameter);
+				}
 			}
 		}
 	}
