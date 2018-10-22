@@ -17,8 +17,9 @@ public class Window  extends JFrame{
 	public static Window frame;
 	private static Controller ctrl;
 	private static JPanel drawPanel;
-	private static Container pane;
-	public static ColorPicker picker  = new ColorPicker(Color.WHITE);
+	public static Container pane;
+	
+	public static ColorPicker picker  = new ColorPicker(Color.BLACK);
 	public Window() {
 		pane = getContentPane();
 		pane.setLayout(new BorderLayout());	
@@ -41,6 +42,8 @@ public class Window  extends JFrame{
 		drawPanel = new DrawPanel();
 		drawPanel.setBackground(Color.BLACK);
 		drawPanel.add(picker);
+		FileIO file = new FileIO(drawPanel);
+		
 		pane.add(drawPanel);
 		
 		frame.setFocusable(true);
