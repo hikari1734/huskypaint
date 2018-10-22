@@ -18,6 +18,7 @@ public class Window  extends JFrame{
 	private static Controller ctrl;
 	private static JPanel drawPanel;
 	private static Container pane;
+	public static ColorPicker picker  = new ColorPicker(Color.WHITE);
 	public Window() {
 		pane = getContentPane();
 		pane.setLayout(new BorderLayout());	
@@ -36,11 +37,12 @@ public class Window  extends JFrame{
 		
 		//Set the icon of the window
 		frame.setIconImage(FileIO.loadImage("/textures/Husky.png"));
-
+		
 		drawPanel = new DrawPanel();
 		drawPanel.setBackground(Color.BLACK);
+		drawPanel.add(picker);
 		pane.add(drawPanel);
-
+		
 		frame.setFocusable(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
