@@ -34,8 +34,11 @@ public class FileIO extends JButton {
 					} catch (IOException ex) {
 						ex.printStackTrace();
 					}
-					DrawPanel d = new DrawPanel(origImage);
-					Window.pane.add(d);
+					//DrawPanel d = new DrawPanel(origImage);
+					//Window.pane.add(d);
+					//DrawPanel.imageBeingWorkedOn = origImage;
+					DrawPanel.setImageBeingWorkedOn(origImage);
+					Window.frame.setTitle(selectedFile.getName()+" - Husky Paint");
 				}
 			}
 		});

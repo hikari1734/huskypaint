@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 public class Window  extends JFrame{
 	public static Window frame;
 	private static Controller ctrl;
-	private static JPanel drawPanel;
+	public static JPanel drawPanel;
 	public static Container pane;
 	
 	public static ColorPicker picker  = new ColorPicker(Color.BLACK);
@@ -35,7 +35,7 @@ public class Window  extends JFrame{
 		
 
 		//Make the window default to a size of 800 pixels wide and 600 pixels high
-		frame.setSize(800,600);
+		frame.setSize(20,20);
 
 		//Set the name of the window
 		frame.setTitle("Husky Paint");
@@ -59,6 +59,6 @@ public class Window  extends JFrame{
 
 		//Make the window show up on top of whatever other windows are on the screen when the program starts.
 		frame.setVisible(true);	
-
+		frame.setLocationRelativeTo(null);
 	}
 }

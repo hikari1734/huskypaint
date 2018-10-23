@@ -21,49 +21,42 @@ public class DrawPanel extends JPanel{
 	private static final long serialVersionUID = 1L;
 	public static BufferedImage imageBeingWorkedOn;//The image that is currently being worked on.
 	public static Point cameraCoords;//The coordinates of the top left corner of the "camera"
+	public static int toolbarOffset = 50;
+	public static int windowTitleHeight = 30;
 
 	public DrawPanel() {
 
 		//the image being worked on defaults to a blank image that is 400x400 pixels
-		imageBeingWorkedOn = new BufferedImage(400, 400, BufferedImage.TYPE_INT_RGB);
-		Graphics tmp = imageBeingWorkedOn.getGraphics();
-
-		//The image is white(blank) by default.
-		tmp.setColor(Color.WHITE);
-		tmp.fillRect(0, 0, imageBeingWorkedOn.getWidth(), imageBeingWorkedOn.getHeight());
-		tmp.dispose();
-
-		//the camera defaults to being centered on the image
-		centerCameraOnImage();
+		setImageBeingWorkedOn(createBlankImage(800,600));
 	}
-
-	public DrawPanel(BufferedImage s) {
-		//resize based on image size
-		Window.frame = new Window();
-		Window.frame.setSize(s.getWidth() + 100, s.getHeight() + 100);
-		Window.pane.setSize(s.getWidth(), s.getHeight());
-		
-		System.out.println(s.getWidth() + " " + Window.frame.getWidth());
-		imageBeingWorkedOn = new BufferedImage(s.getWidth(), s.getHeight(), BufferedImage.TYPE_INT_RGB);
-		Graphics tmp = imageBeingWorkedOn.getGraphics();
+	
+	/**
+	 * Creates a white image with the specified dimensions.
+	 * @param width - The width of the image to be created.
+	 * @param height - The height of the image to be created.
+	 * @return A blank white image with the specified dimensions.
+	 */
+	public BufferedImage createBlankImage(int width, int height) {
+		BufferedImage tmp = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		Graphics tmpG = tmp.getGraphics();
 
 		//The image is white(blank) by default.
-		//tmp.setColor(Color.WHITE);
-		//tmp.fillRect(0, 0, imageBeingWorkedOn.getWidth(), imageBeingWorkedOn.getHeight());
-		tmp.drawImage(s, 0, 0, null);
-		tmp.dispose();
-
-		//the camera defaults to being centered on the image
-		centerCameraOnImage();
+		tmpG.setColor(Color.WHITE);
+		tmpG.fillRect(0, 0, tmp.getWidth(), tmp.getHeight());
+		tmpG.dispose();
+		return tmp;
 	}
 
 	/**
 	 * Moves the "camera" so that the image will be displayed in the center of it.
 	 */
-	public void centerCameraOnImage() {
-		int windowTitleHeight = 30;
-		int cameraX = (Window.frame.getWidth()/2)-(imageBeingWorkedOn.getWidth()/2);
-		int cameraY = ((Window.frame.getHeight()-windowTitleHeight)/2)-(imageBeingWorkedOn.getHeight()/2);
+	public static void centerCameraOnImage() {
+		
+		System.out.println("Centering image, width is: "+Window.pane.getWidth()+","+imageBeingWorkedOn.getWidth());
+		Point centerOfImage = new Point(imageBeingWorkedOn.getWidth()/2,imageBeingWorkedOn.getHeight()/2);
+		Point centerOfCanvas = new Point(Window.frame.getWidth()/2,toolbarOffset+(Window.frame.getHeight()-(toolbarOffset+30))/2);
+		int cameraX = centerOfCanvas.x-(centerOfImage.x+8);
+		int cameraY = (centerOfCanvas.y)-(centerOfImage.y+8);
 
 		cameraCoords = new Point(cameraX, cameraY);
 	}
@@ -92,9 +85,9 @@ public class DrawPanel extends JPanel{
 		//If the mouse is inside the image being edited
 		if(coordinate.getX()>=0&&coordinate.getX()<imageBeingWorkedOn.getWidth()) {
 			if(coordinate.getY()>=0&&coordinate.getY()<imageBeingWorkedOn.getHeight()) {
-				
+
 				g.setColor(color);
-				
+
 				//if the mouse has been dragged
 				if(Controller.coordinatesOfPreviousMouseEvent!=null) {
 					//Draw a line between the previous mouse position and the current mouse position.
@@ -107,8 +100,24 @@ public class DrawPanel extends JPanel{
 					g.setColor(color);
 					g.fillOval(coordinate.x-radius, coordinate.y-radius, diameter, diameter);
 				}
+				System.out.println("painting");
 			}
 		}
+	}
+	/**
+	 * Setter for imageBeingWorkedOn that also resizes the HuskyPaint window to fit the image and centers the image inside of it.
+	 * 
+	 * @param img - The image that imageBeingWorkedOn should be replaced with/set to.
+	 */
+	public static void setImageBeingWorkedOn(BufferedImage img) {
+		
+		//resize the window to fit the image
+		Window.frame.setSize(img.getWidth()+30, img.getHeight()+windowTitleHeight+toolbarOffset+30);
+		
+		imageBeingWorkedOn = img;
+		
+		//center the camera on the new image
+		centerCameraOnImage();
 	}
 	/**
 	 * Update the graphics displayed by the program.
@@ -117,6 +126,8 @@ public class DrawPanel extends JPanel{
 	 */
 	public void Draw(Graphics2D g) {
 		//imageBeingWorkedOn = FileIO.loadImage("/textures/Husky.png");
+		g.setColor(new Color(60,60,60));
+		g.fillRect(0, 0, Window.frame.getWidth(), 50);
 		//Draw the image on the canvas (This JPanel)
 		g.drawImage(imageBeingWorkedOn, cameraCoords.x, cameraCoords.y, null);
 

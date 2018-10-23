@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 public class Controller implements MouseListener,MouseMotionListener{
 	JPanel drawPanel;//We need a reference to the DrawPanel used by the program.
 	public static Point coordinatesOfPreviousMouseEvent = null;
-	Color paintBrush;
+	Color paintBrush = new Color(0,0,0);
 	public Controller() {
 
 	}
@@ -46,7 +46,6 @@ public class Controller implements MouseListener,MouseMotionListener{
 			}
 		});
 		DrawPanel.applyPaintBrush(coordinatesOfEventRelativeToImage, 10, paintBrush);
-		
 		
 		//Update the canvas so changes will be visible
 		drawPanel.repaint();
