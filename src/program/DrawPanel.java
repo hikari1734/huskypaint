@@ -96,7 +96,7 @@ public class DrawPanel extends JPanel{
 	 * @param g - The Graphics2D object to draw with.
 	 */
 	public void Draw(Graphics2D g) {
-
+		//imageBeingWorkedOn = FileIO.loadImage("/textures/Husky.png");
 		//Draw the image on the canvas (This JPanel)
 		g.drawImage(imageBeingWorkedOn, cameraCoords.x, cameraCoords.y, null);
 
