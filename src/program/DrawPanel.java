@@ -8,13 +8,13 @@ import java.awt.Point;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 
-import javax.swing.JButton;
+
 import javax.swing.JPanel;
 
 /**
  * DrawPanel - This is the JPanel that the window's graphics are drawn on top of.
  * 
- * @author Matthew Finzel
+ * @author Matthew Finzel, Marissa Walther
  *
  */
 public class DrawPanel extends JPanel{
@@ -31,6 +31,26 @@ public class DrawPanel extends JPanel{
 		//The image is white(blank) by default.
 		tmp.setColor(Color.WHITE);
 		tmp.fillRect(0, 0, imageBeingWorkedOn.getWidth(), imageBeingWorkedOn.getHeight());
+		tmp.dispose();
+
+		//the camera defaults to being centered on the image
+		centerCameraOnImage();
+	}
+
+	public DrawPanel(BufferedImage s) {
+		//resize based on image size
+		Window.frame = new Window();
+		Window.frame.setSize(s.getWidth() + 100, s.getHeight() + 100);
+		Window.pane.setSize(s.getWidth(), s.getHeight());
+		
+		System.out.println(s.getWidth() + " " + Window.frame.getWidth());
+		imageBeingWorkedOn = new BufferedImage(s.getWidth(), s.getHeight(), BufferedImage.TYPE_INT_RGB);
+		Graphics tmp = imageBeingWorkedOn.getGraphics();
+
+		//The image is white(blank) by default.
+		//tmp.setColor(Color.WHITE);
+		//tmp.fillRect(0, 0, imageBeingWorkedOn.getWidth(), imageBeingWorkedOn.getHeight());
+		tmp.drawImage(s, 0, 0, null);
 		tmp.dispose();
 
 		//the camera defaults to being centered on the image

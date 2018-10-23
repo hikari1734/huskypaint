@@ -1,5 +1,8 @@
 package program;
-
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.awt.Toolkit;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -17,7 +20,9 @@ public class Window  extends JFrame{
 	public static Window frame;
 	private static Controller ctrl;
 	private static JPanel drawPanel;
-	private static Container pane;
+	public static Container pane;
+	
+	public static ColorPicker picker  = new ColorPicker(Color.BLACK);
 	public Window() {
 		pane = getContentPane();
 		pane.setLayout(new BorderLayout());	
@@ -27,6 +32,7 @@ public class Window  extends JFrame{
 	 */
 	public static void main(String[] args) {
 		frame = new Window();
+		
 
 		//Make the window default to a size of 800 pixels wide and 600 pixels high
 		frame.setSize(800,600);
@@ -36,11 +42,15 @@ public class Window  extends JFrame{
 		
 		//Set the icon of the window
 		frame.setIconImage(FileIO.loadImage("/textures/Husky.png"));
-
+		
 		drawPanel = new DrawPanel();
 		drawPanel.setBackground(Color.BLACK);
+		drawPanel.add(picker);
+		FileIO file = new FileIO(drawPanel);
+		file.setText("Import");
+		drawPanel.add(file);
 		pane.add(drawPanel);
-
+		
 		frame.setFocusable(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

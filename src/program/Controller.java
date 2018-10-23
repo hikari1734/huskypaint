@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 public class Controller implements MouseListener,MouseMotionListener{
 	JPanel drawPanel;//We need a reference to the DrawPanel used by the program.
 	public static Point coordinatesOfPreviousMouseEvent = null;
+	Color paintBrush;
 	public Controller() {
 
 	}
@@ -37,8 +38,16 @@ public class Controller implements MouseListener,MouseMotionListener{
 	public void mouseDragged(MouseEvent e) {
 		//Draw a black circle with a diameter of 10 at the coordinates of the mouse on the image
 		Point coordinatesOfEventRelativeToImage = new Point(e.getPoint().x-DrawPanel.cameraCoords.x, e.getPoint().y-DrawPanel.cameraCoords.y);
-		DrawPanel.applyPaintBrush(coordinatesOfEventRelativeToImage, 10, new Color(0,0,0));
-
+		
+		Window.picker.addColorChangeListener(new ColorPicker.ColorChangeListener(){
+			@Override
+			public void colorChange(Color newColor){
+				paintBrush = newColor;
+			}
+		});
+		DrawPanel.applyPaintBrush(coordinatesOfEventRelativeToImage, 10, paintBrush);
+		
+		
 		//Update the canvas so changes will be visible
 		drawPanel.repaint();
 
@@ -63,7 +72,7 @@ public class Controller implements MouseListener,MouseMotionListener{
 	public void mousePressed(MouseEvent e) {
 		//Draw a black circle with a diameter of 10 at the coordinates of the mouse event
 		Point coordinatesOfEventRelativeToImage = new Point(e.getPoint().x-DrawPanel.cameraCoords.x, e.getPoint().y-DrawPanel.cameraCoords.y);
-		DrawPanel.applyPaintBrush(coordinatesOfEventRelativeToImage, 10, new Color(0,0,0));
+		DrawPanel.applyPaintBrush(coordinatesOfEventRelativeToImage, 10, paintBrush);
 
 		//Update the canvas so changes will be visible
 		drawPanel.repaint();
