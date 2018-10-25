@@ -54,7 +54,7 @@ public class FileIO extends JButton {
     public static BufferedImage loadImage(String imageName) {
         BufferedImage image;
         try {
-            image = ImageIO.read(FileIO.class.getResourceAsStream("/src/main/resources/Husky.png"));
+            image = ImageIO.read(FileIO.class.getResourceAsStream("/Husky.png"));
             BufferedImage img = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_RGB);
             Graphics g = img.getGraphics();
             g.drawImage(image, 0, 0, null);

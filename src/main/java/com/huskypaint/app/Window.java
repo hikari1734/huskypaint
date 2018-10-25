@@ -41,7 +41,7 @@ public class Window extends JFrame{
         frame.setTitle("Husky Paint");
 
         //Set the icon of the window
-        frame.setIconImage(FileIO.loadImage("src/main/resources/Husky.png"));
+        frame.setIconImage(FileIO.loadImage("/Husky.png"));
 
         drawPanel = new DrawPanel();
         drawPanel.setBackground(Color.BLACK);
