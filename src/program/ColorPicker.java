@@ -58,12 +58,12 @@ public class ColorPicker extends JButton{
     }
 
     public static ImageIcon createIcon(Color iconColor, int width, int height){
-        BufferedImage image = new BufferedImage(10, 10, BufferedImage.TYPE_INT_RGB);
+        BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Graphics2D g = image.createGraphics();
         g.setColor(iconColor);
-        g.fillRect(0, 0, 10, 10);
+        g.fillRect(0, 0, width, height);
         g.setXORMode(Color.DARK_GRAY);
-        g.drawRect(0, 0, 10, 10);
+        g.drawRect(0, 0, width, height);
         image.flush();
         ImageIcon icon = new ImageIcon(image);
         return icon;
