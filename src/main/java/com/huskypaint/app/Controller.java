@@ -17,9 +17,7 @@ public class Controller implements MouseListener,MouseMotionListener{
     JPanel drawPanel;//We need a reference to the DrawPanel used by the program.
     public static Point coordinatesOfPreviousMouseEvent = null;
     Color paintBrush = new Color(0,0,0);
-    public Controller() {
 
-    }
 
     /**
      * Used to set the local variable "drawPanel" so that it refers to the DrawPanel

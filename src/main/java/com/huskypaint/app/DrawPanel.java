@@ -36,7 +36,7 @@ public class DrawPanel extends JPanel{
      * @param height - The height of the image to be created.
      * @return A blank white image with the specified dimensions.
      */
-    public BufferedImage createBlankImage(int width, int height) {
+    public static BufferedImage createBlankImage(int width, int height) {
         BufferedImage tmp = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Graphics tmpG = tmp.getGraphics();
 
