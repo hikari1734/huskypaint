@@ -47,8 +47,11 @@ public class Window extends JFrame{
         drawPanel.setBackground(Color.BLACK);
         drawPanel.add(picker);
         FileIO file = new FileIO(drawPanel);
+        FileExport e = new FileExport();
+        e.setText("Export");
         file.setText("Import");
         drawPanel.add(file);
+        drawPanel.add(e);
         pane.add(drawPanel);
 
         frame.setFocusable(true);
