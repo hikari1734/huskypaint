@@ -119,6 +119,12 @@ public class DrawPanel extends JPanel{
         //center the camera on the new image
         centerCameraOnImage();
     }
+    
+    public static BufferedImage getImageBeingWorkedOn() {
+        return imageBeingWorkedOn;
+    }
+    
+    
     /**
      * Update the graphics displayed by the program.
      *
