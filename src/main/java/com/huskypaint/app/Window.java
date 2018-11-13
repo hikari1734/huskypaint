@@ -22,7 +22,8 @@ public class Window extends JFrame{
     private static Controller ctrl;
     public static JPanel drawPanel;
     public static Container pane;
-
+    public static FillButton fill = new FillButton();
+    public static ArrayList<Point> drawPoints = new ArrayList<Point>();
     public static ColorPicker picker  = new ColorPicker(Color.BLACK);
     public Window() {
         pane = getContentPane();
@@ -47,6 +48,8 @@ public class Window extends JFrame{
         drawPanel = new DrawPanel();
         drawPanel.setBackground(Color.BLACK);
         drawPanel.add(picker);
+        fill.setText("Fill");
+        drawPanel.add(fill);
         FileIO file = new FileIO(drawPanel);
         FileExport png = new FileExport("png");
         png.setText("Export as PNG");
