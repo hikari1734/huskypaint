@@ -1,4 +1,6 @@
-package main.java.com.huskypaint.app;
+package com.huskypaint.app;
+
+import com.huskypaint.app.DrawPanel;
 
 import java.awt.Graphics;
 import java.awt.Label;
