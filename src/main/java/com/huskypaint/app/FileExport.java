@@ -18,7 +18,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 
 public class FileExport extends JButton {
-    public static File selectedFile;
+    //public static File selectedFile;
 
     public FileExport() {
         addActionListener(new ActionListener() {

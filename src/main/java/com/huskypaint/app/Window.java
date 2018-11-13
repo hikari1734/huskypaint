@@ -52,6 +52,24 @@ public class Window extends JFrame{
         file.setText("Import");
         drawPanel.add(file);
         drawPanel.add(e);
+
+        JButton increaseSize = new JButton("Increase Paintbrush Size");
+        increaseSize.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Controller.diam += 10;
+            }
+        });
+
+        JButton decreaseSize = new JButton("Decrease Paintbrush Size");
+        decreaseSize.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Controller.diam -= 10;
+            }
+        });
+
+        drawPanel.add(increaseSize);
+        drawPanel.add(decreaseSize);
+
         pane.add(drawPanel);
 
         frame.setFocusable(true);
