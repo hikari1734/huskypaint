@@ -25,7 +25,8 @@ public class Window extends JFrame{
     private static Controller ctrl;
     public static JPanel drawPanel;
     public static Container pane;
-
+    public static FillButton fill = new FillButton();
+    public static ArrayList<Point> drawPoints = new ArrayList<Point>();
     public static ColorPicker picker  = new ColorPicker(Color.BLACK);
     public Window() {
         pane = getContentPane();
@@ -50,12 +51,59 @@ public class Window extends JFrame{
         drawPanel = new DrawPanel();
         drawPanel.setBackground(Color.BLACK);
         drawPanel.add(picker);
+        fill.setText("Fill");
+        drawPanel.add(fill);
         FileIO file = new FileIO(drawPanel);
+        FileExport png = new FileExport("png");
+        png.setText("Export as PNG");
         file.setText("Import");
+
         ExportFile exportFile = new ExportFile();
         exportFile.setText("Export Test File");
         drawPanel.add(file);
         drawPanel.add(exportFile);
+
+        //drawPanel.add(file);
+       // drawPanel.add(png);
+
+        FileExport jpg = new FileExport("jpg");
+        jpg.setText("Export as JPG");
+
+        JButton increaseSize = new JButton("Increase Paintbrush Size");
+        increaseSize.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Controller.diam += 10;
+            }
+        });
+
+        JButton decreaseSize = new JButton("Decrease Paintbrush Size");
+        decreaseSize.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Controller.diam -= 10;
+            }
+        });
+
+        //drawPanel.add(increaseSize);
+        //drawPanel.add(decreaseSize);
+
+        //create menubar
+        JMenuBar menubar = new JMenuBar();
+
+        //file import export
+        JMenu menu = new JMenu("File");
+        menu.add(file);
+        menu.add(png);
+        menu.add(jpg);
+        menubar.add(menu);
+
+        //brush sizes
+        JMenu brush = new JMenu("Brush Size");
+        brush.add(increaseSize);
+        brush.add(decreaseSize);
+        menubar.add(brush);
+
+        frame.setJMenuBar(menubar);
+
         pane.add(drawPanel);
 
         frame.setFocusable(true);

@@ -122,6 +122,12 @@ public class DrawPanel extends JPanel{
         }
 
     }
+    
+    public static BufferedImage getImageBeingWorkedOn() {
+        return imageBeingWorkedOn;
+    }
+    
+    
     /**
      * Update the graphics displayed by the program.
      *

@@ -12,7 +12,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HuskyPaint" target="1.5" />
-      <module name="huskypaint" target="1.5" />
+      <module name="huskypaint" target="7" />
     </bytecodeTargetLevel>
   </component>
 </project>

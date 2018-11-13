@@ -23,7 +23,7 @@
     <SUITE FILE_PATH="coverage/HuskyPaint$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1540429210161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.huskypaint.app.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/huskypaint$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1542138989301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/huskypaint$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1542140152449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.huskypaint.app.*</FILTER>
     </SUITE>
   </component>
@@ -63,14 +63,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="5304" />
+          <entry key="java" value="5348" />
           <entry key="txt" value="1" />
           <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5304" />
+          <entry key="JAVA" value="5348" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="8" />
         </counts>
@@ -113,7 +113,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/ExportFile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -127,13 +127,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="68" column="129" selection-start-line="68" selection-start-column="129" selection-end-line="68" selection-end-column="129" />
+            <state relative-caret-position="285">
+              <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2356#2528#0" expanded="true" />
+                <element signature="e#2527#2528#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,11 +156,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Window.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
-              <caret line="55" column="44" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
+            <state>
+              <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2129#2136#0" expanded="true" />
+                <element signature="e#831#838#0" expanded="true" />
+                <element signature="e#2260#2402#0" expanded="true" />
+                <element signature="e#2401#2402#0" expanded="true" />
+                <element signature="e#2517#2659#0" expanded="true" />
+                <element signature="e#2658#2659#0" expanded="true" />
+                <element signature="e#3745#3752#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -205,12 +212,12 @@
         <option value="$PROJECT_DIR$/src/main/resources/tests/smilePoints.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/FileIO.java" />
         <option value="$PROJECT_DIR$/output.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/Controller.java" />
         <option value="$PROJECT_DIR$/smilePoints.txt" />
         <option value="$PROJECT_DIR$/src/test/java/com/huskypaint/app/AppTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/ExportFile.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/Window.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/DrawPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/Window.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/Controller.java" />
       </list>
     </option>
   </component>
@@ -275,7 +282,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542139518119" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542140152312" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -302,7 +309,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Window">
+  <component name="RunManager" selected="JUnit.AppTest">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.huskypaint.app.App" />
       <module name="HuskyPaint" />
@@ -369,8 +376,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Window" />
         <item itemvalue="JUnit.AppTest" />
+        <item itemvalue="Application.Window" />
         <item itemvalue="JUnit.AppTest.testColorPicker" />
         <item itemvalue="Application.App" />
       </list>
@@ -566,13 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/ColorPicker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/FileIO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -587,16 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
           <caret line="421" column="8" selection-start-line="421" selection-start-column="8" selection-end-line="421" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="68" column="129" selection-start-line="68" selection-start-column="129" selection-end-line="68" selection-end-column="129" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -623,14 +613,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Window.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/ColorPicker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="55" column="44" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2129#2136#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -642,6 +628,34 @@
             <element signature="imports" expanded="true" />
             <element signature="e#226#992#0" expanded="true" />
             <element signature="e#991#992#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#831#838#0" expanded="true" />
+            <element signature="e#2260#2402#0" expanded="true" />
+            <element signature="e#2401#2402#0" expanded="true" />
+            <element signature="e#2517#2659#0" expanded="true" />
+            <element signature="e#2658#2659#0" expanded="true" />
+            <element signature="e#3745#3752#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2356#2528#0" expanded="true" />
+            <element signature="e#2527#2528#0" expanded="true" />
           </folding>
         </state>
       </provider>
