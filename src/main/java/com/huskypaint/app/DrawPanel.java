@@ -28,6 +28,7 @@ public class DrawPanel extends JPanel{
 
         //the image being worked on defaults to a blank image that is 400x400 pixels
         setImageBeingWorkedOn(createBlankImage(800,600));
+        //imageBeingWorkedOn = createBlankImage(800, 600);
     }
 
     /**
@@ -100,7 +101,6 @@ public class DrawPanel extends JPanel{
                     g.setColor(color);
                     g.fillOval(coordinate.x-radius, coordinate.y-radius, diameter, diameter);
                 }
-                System.out.println("painting");
             }
         }
     }
@@ -111,13 +111,16 @@ public class DrawPanel extends JPanel{
      */
     public static void setImageBeingWorkedOn(BufferedImage img) {
 
-        //resize the window to fit the image
-        Window.frame.setSize(img.getWidth()+30, img.getHeight()+windowTitleHeight+toolbarOffset+30);
-
         imageBeingWorkedOn = img;
 
-        //center the camera on the new image
-        centerCameraOnImage();
+        //resize the window to fit the image
+        if (Window.frame != null) {
+            Window.frame.setSize(img.getWidth() + 30, img.getHeight() + windowTitleHeight + toolbarOffset + 30);
+
+            //center the camera on the new image
+            centerCameraOnImage();
+        }
+
     }
     /**
      * Update the graphics displayed by the program.
@@ -125,7 +128,7 @@ public class DrawPanel extends JPanel{
      * @param g - The Graphics2D object to draw with.
      */
     public void Draw(Graphics2D g) {
-        //imageBeingWorkedOn = FileIO.loadImage("/textures/Husky.png");
+        //imageBeingWorkedOn = FileIO.loadImage("/Husky.png");
         g.setColor(new Color(60,60,60));
         g.fillRect(0, 0, Window.frame.getWidth(), 50);
         //Draw the image on the canvas (This JPanel)

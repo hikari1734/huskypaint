@@ -42,6 +42,7 @@ public class Controller implements MouseListener,MouseMotionListener{
             }
         });
         DrawPanel.applyPaintBrush(coordinatesOfEventRelativeToImage, 10, paintBrush);
+        System.out.println((int) coordinatesOfEventRelativeToImage.getX()+", " + (int) coordinatesOfEventRelativeToImage.getY());
 
         //Update the canvas so changes will be visible
         drawPanel.repaint();
@@ -65,6 +66,7 @@ public class Controller implements MouseListener,MouseMotionListener{
         //Draw a black circle with a diameter of 10 at the coordinates of the mouse event
         Point coordinatesOfEventRelativeToImage = new Point(e.getPoint().x-DrawPanel.cameraCoords.x, e.getPoint().y-DrawPanel.cameraCoords.y);
         DrawPanel.applyPaintBrush(coordinatesOfEventRelativeToImage, 10, paintBrush);
+        System.out.println((int) coordinatesOfEventRelativeToImage.getX()+", " + (int) coordinatesOfEventRelativeToImage.getY());
 
         //Update the canvas so changes will be visible
         drawPanel.repaint();

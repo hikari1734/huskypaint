@@ -6,6 +6,10 @@ import java.awt.Toolkit;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -48,7 +52,10 @@ public class Window extends JFrame{
         drawPanel.add(picker);
         FileIO file = new FileIO(drawPanel);
         file.setText("Import");
+        ExportFile exportFile = new ExportFile();
+        exportFile.setText("Export Test File");
         drawPanel.add(file);
+        drawPanel.add(exportFile);
         pane.add(drawPanel);
 
         frame.setFocusable(true);
@@ -60,5 +67,32 @@ public class Window extends JFrame{
         //Make the window show up on top of whatever other windows are on the screen when the program starts.
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
+    }
+
+    public static void paintFromPointsFile(String fileName) {
+        ArrayList<Point> pointList = new ArrayList<Point>();
+
+        File pointsFile = new File(fileName);
+        Scanner scan = null;
+        try {
+            scan = new Scanner(pointsFile);
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+
+        int x;
+        int y;
+        String[] line;
+        while(scan.hasNextLine()) {
+            line = scan.nextLine().split(", ");
+            x = Integer.parseInt(line[0]);
+            y = Integer.parseInt(line[1]);
+            pointList.add(new Point(x, y));
+        }
+
+        for(Point point : pointList) {
+            DrawPanel.applyPaintBrush(point, 10, Color.black);
+            drawPanel.repaint();
+        }
     }
 }
