@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.io.File;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -47,11 +48,14 @@ public class Window extends JFrame{
         drawPanel.setBackground(Color.BLACK);
         drawPanel.add(picker);
         FileIO file = new FileIO(drawPanel);
-        FileExport e = new FileExport();
-        e.setText("Export");
+        FileExport png = new FileExport("png");
+        png.setText("Export as PNG");
         file.setText("Import");
-        drawPanel.add(file);
-        drawPanel.add(e);
+        //drawPanel.add(file);
+       // drawPanel.add(png);
+
+        FileExport jpg = new FileExport("jpg");
+        jpg.setText("Export as JPG");
 
         JButton increaseSize = new JButton("Increase Paintbrush Size");
         increaseSize.addActionListener(new ActionListener() {
@@ -67,8 +71,27 @@ public class Window extends JFrame{
             }
         });
 
-        drawPanel.add(increaseSize);
-        drawPanel.add(decreaseSize);
+        //drawPanel.add(increaseSize);
+        //drawPanel.add(decreaseSize);
+
+        //create menubar
+        JMenuBar menubar = new JMenuBar();
+
+        //file import export
+        JMenu menu = new JMenu("File");
+        menu.add(file);
+        menu.add(png);
+        menu.add(jpg);
+        menubar.add(menu);
+
+        //brush sizes
+        JMenu brush = new JMenu("Brush Size");
+        brush.add(increaseSize);
+        brush.add(decreaseSize);
+        menubar.add(brush);
+
+        frame.setJMenuBar(menubar);
+
 
         pane.add(drawPanel);
 

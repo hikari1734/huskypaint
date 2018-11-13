@@ -20,7 +20,8 @@ import javax.swing.ImageIcon;
 public class FileExport extends JButton {
     //public static File selectedFile;
 
-    public FileExport() {
+    public FileExport(String type) {
+        final String t = type;
         addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
 
@@ -30,8 +31,8 @@ public class FileExport extends JButton {
                 if (retrival == JFileChooser.APPROVE_OPTION) {
                     try {
                         BufferedImage img = DrawPanel.getImageBeingWorkedOn();
-                    File outputFile = new File(chooser.getSelectedFile() + ".png");
-                    ImageIO.write(img, "png", outputFile);
+                    File outputFile = new File(chooser.getSelectedFile() + "." + t);
+                    ImageIO.write(img, t, outputFile);
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
