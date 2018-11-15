@@ -1,11 +1,12 @@
 package com.huskypaint.app;
 
-import java.awt.Color;
-import java.awt.Point;
-import java.awt.Rectangle;
+import java.awt.*;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.geom.*;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -15,9 +16,15 @@ import javax.swing.*;
  * @author Matthew Finzel
  */
 public class Controller implements MouseListener,MouseMotionListener{
+
 	JPanel drawPanel;//We need a reference to the DrawPanel used by the program.
 	public static Point coordinatesOfPreviousMouseEvent = null;
+	public static int diam = 10;
 	Color paintBrush = new Color(0,0,0);
+	Boolean filling = false;
+	Path2D.Double fillPath = new Path2D.Double();
+	ArrayList<Path2D> shapes = new ArrayList<Path2D>();
+
 	public Controller() {
 
 	}
@@ -43,43 +50,44 @@ public class Controller implements MouseListener,MouseMotionListener{
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		//Draw a black circle with a diameter of 10 at the coordinates of the mouse on the image
-		Point coordinatesOfEventRelativeToImage = new Point(e.getPoint().x-DrawPanel.cameraCoords.x, e.getPoint().y-DrawPanel.cameraCoords.y);
+		filling = FillButton.getFilling();
+		if(!filling) {
+			//Draw a black circle with a diameter of 10 at the coordinates of the mouse on the image
+			Point coordinatesOfEventRelativeToImage = new Point(e.getPoint().x - DrawPanel.cameraCoords.x, e.getPoint().y - DrawPanel.cameraCoords.y);
+			Window.drawPoints.add(coordinatesOfEventRelativeToImage);
 
-		if(SwingUtilities.isLeftMouseButton(e)) {
-			DrawPanel.applyPaintBrush(coordinatesOfEventRelativeToImage, 10, paintBrush);
-		}
-		else if(SwingUtilities.isRightMouseButton(e)) {
-			//System.out.println("right mouse dragged");
-			int x = e.getX()-DrawPanel.cameraCoords.x;
-			int y = e.getY()-DrawPanel.cameraCoords.y;
+			if (SwingUtilities.isLeftMouseButton(e)) {
+				DrawPanel.applyPaintBrush(coordinatesOfEventRelativeToImage, diam, paintBrush);
+			} else if (SwingUtilities.isRightMouseButton(e)) {
+				//System.out.println("right mouse dragged");
+				int x = e.getX() - DrawPanel.cameraCoords.x;
+				int y = e.getY() - DrawPanel.cameraCoords.y;
 
-			//make sure the coordinates are within the bounds of the image being worked on
-			if(x<0) x = 0;
-			if(y<0) y = 0;
-			if(x>DrawPanel.imageBeingWorkedOn.getWidth()-1) x = DrawPanel.imageBeingWorkedOn.getWidth()-1;
-			if(y>DrawPanel.imageBeingWorkedOn.getHeight()-1) y = DrawPanel.imageBeingWorkedOn.getHeight()-1;
+				//make sure the coordinates are within the bounds of the image being worked on
+				if (x < 0) x = 0;
+				if (y < 0) y = 0;
+				if (x > DrawPanel.imageBeingWorkedOn.getWidth() - 1) x = DrawPanel.imageBeingWorkedOn.getWidth() - 1;
+				if (y > DrawPanel.imageBeingWorkedOn.getHeight() - 1) y = DrawPanel.imageBeingWorkedOn.getHeight() - 1;
 
-			//update the selection rectangle
-			if(DrawPanel.selection!=null) {
-				//System.out.println("here");
-				if(x<DrawPanel.selectionCoordinate.x) {
-					DrawPanel.selection.width = DrawPanel.selectionCoordinate.x-x;
-					DrawPanel.selection.x = x;
-				}
-				else if(x>DrawPanel.selectionCoordinate.x){
-					DrawPanel.selection.x = DrawPanel.selectionCoordinate.x;
-					DrawPanel.selection.width = x-DrawPanel.selectionCoordinate.x;
-				}
-				if(y<DrawPanel.selectionCoordinate.y) {
-					DrawPanel.selection.height = DrawPanel.selectionCoordinate.y-y;
-					DrawPanel.selection.y = y;
-				}
-				else if(y>DrawPanel.selectionCoordinate.y){
-					DrawPanel.selection.y = DrawPanel.selectionCoordinate.y;
-					DrawPanel.selection.height = y-DrawPanel.selectionCoordinate.y;
-				}
+				//update the selection rectangle
+				if (DrawPanel.selection != null) {
+					//System.out.println("here");
+					if (x < DrawPanel.selectionCoordinate.x) {
+						DrawPanel.selection.width = DrawPanel.selectionCoordinate.x - x;
+						DrawPanel.selection.x = x;
+					} else if (x > DrawPanel.selectionCoordinate.x) {
+						DrawPanel.selection.x = DrawPanel.selectionCoordinate.x;
+						DrawPanel.selection.width = x - DrawPanel.selectionCoordinate.x;
+					}
+					if (y < DrawPanel.selectionCoordinate.y) {
+						DrawPanel.selection.height = DrawPanel.selectionCoordinate.y - y;
+						DrawPanel.selection.y = y;
+					} else if (y > DrawPanel.selectionCoordinate.y) {
+						DrawPanel.selection.y = DrawPanel.selectionCoordinate.y;
+						DrawPanel.selection.height = y - DrawPanel.selectionCoordinate.y;
+					}
 
+				}
 			}
 		}
 
@@ -100,36 +108,50 @@ public class Controller implements MouseListener,MouseMotionListener{
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		filling = FillButton.getFilling();
+		Color fillColor = Window.picker.getCurrentColor();
+		int x = e.getX();
+		int y = e.getY();
+
+		Graphics2D g2 = (Graphics2D) DrawPanel.imageBeingWorkedOn.getGraphics();
+
+		if(filling) {
+			fillShape(x, y, fillColor, g2);
+		} else {
+			return;
+		}
 		//Update the canvas so changes will be visible
 		drawPanel.repaint();
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		int x = e.getX()-DrawPanel.cameraCoords.x;
-		int y = e.getY()-DrawPanel.cameraCoords.y;
+		filling = FillButton.getFilling();
+		if(!filling) {
+			int x = e.getX() - DrawPanel.cameraCoords.x;
+			int y = e.getY() - DrawPanel.cameraCoords.y;
 
-		//make sure the coordinates are within the bounds of the image being worked on
-		if(x<0) x = 0;
-		if(y<0) y = 0;
-		if(x>DrawPanel.imageBeingWorkedOn.getWidth()-1) x = DrawPanel.imageBeingWorkedOn.getWidth()-1;
-		if(y>DrawPanel.imageBeingWorkedOn.getHeight()-1) y = DrawPanel.imageBeingWorkedOn.getHeight()-1;
+			//make sure the coordinates are within the bounds of the image being worked on
+			if (x < 0) x = 0;
+			if (y < 0) y = 0;
+			if (x > DrawPanel.imageBeingWorkedOn.getWidth() - 1) x = DrawPanel.imageBeingWorkedOn.getWidth() - 1;
+			if (y > DrawPanel.imageBeingWorkedOn.getHeight() - 1) y = DrawPanel.imageBeingWorkedOn.getHeight() - 1;
 
-		if(SwingUtilities.isLeftMouseButton(e)) {
-			//remove selection box from the image
-			DrawPanel.selection=null;
+			if (SwingUtilities.isLeftMouseButton(e)) {
+				//remove selection box from the image
+				DrawPanel.selection = null;
 
-			//Draw a black circle with a diameter of 10 at the coordinates of the mouse event
-			Point coordinatesOfEventRelativeToImage = new Point(x, y);
-			DrawPanel.applyPaintBrush(coordinatesOfEventRelativeToImage, 10, paintBrush);
+				//Draw a black circle with a diameter of 10 at the coordinates of the mouse event
+				Point coordinatesOfEventRelativeToImage = new Point(x, y);
+				DrawPanel.applyPaintBrush(coordinatesOfEventRelativeToImage, diam, paintBrush);
 
-		}
-		else if(SwingUtilities.isRightMouseButton(e)) {
-			if(DrawPanel.selection==null) {
-				DrawPanel.selection = new Rectangle(x, y, 1,1);
-				DrawPanel.selectionCoordinate = new Point(x, y);
+			} else if (SwingUtilities.isRightMouseButton(e)) {
+				if (DrawPanel.selection == null) {
+					DrawPanel.selection = new Rectangle(x, y, 1, 1);
+					DrawPanel.selectionCoordinate = new Point(x, y);
+				}
+
 			}
-
 		}
 		//Update the canvas so changes will be visible
 		drawPanel.repaint();
@@ -140,6 +162,26 @@ public class Controller implements MouseListener,MouseMotionListener{
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
+		filling = FillButton.getFilling();
+		if(!filling) {
+			if (Window.drawPoints.size() > 0) {
+				fillPath = new Path2D.Double();
+				Point startpoint = Window.drawPoints.remove(0);
+				fillPath.moveTo(startpoint.getX(), startpoint.getY());
+				while (Window.drawPoints.size() > 0) {
+					Point point = Window.drawPoints.remove(0);
+					fillPath.lineTo(point.getX(), point.getY());
+				}
+				//fillPath.lineTo(startpoint.getX(), startpoint.getY());
+
+				fillPath.closePath();
+
+				shapes.add(fillPath);
+
+			}
+
+			//fillPath.reset();
+		}
 
 		//Update the canvas so changes will be visible
 		drawPanel.repaint();
@@ -158,6 +200,31 @@ public class Controller implements MouseListener,MouseMotionListener{
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 
+	}
+
+	void fillShape(int x, int y, Color tofill, Graphics2D g2){
+
+
+		Path2D shapeToFill = null;
+		for(Path2D shape:shapes){
+			System.out.println("filling a shape");
+			Rectangle rect = shape.getBounds();
+			Point p = rect.getLocation();
+			int w = rect.width;
+			int h = rect.height;
+
+			if(x > p.getX() && y > p.getY() && y < (p.getY() + h) && x < (p.getX() + w)){
+
+				g2.setColor(tofill);
+				shapeToFill = shape;
+				g2.fill(shape);
+
+			}
+		}
+		g2.setColor(tofill);
+		if(shapeToFill != null) {
+			g2.fill(shapeToFill);
+		}
 	}
 
 }

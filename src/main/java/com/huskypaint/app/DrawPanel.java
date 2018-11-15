@@ -19,6 +19,7 @@ import javax.swing.JPanel;
  *
  */
 public class DrawPanel extends JPanel{
+
 	private static final long serialVersionUID = 1L;
 	public static BufferedImage imageBeingWorkedOn;//The image that is currently being worked on.
 	public static Point cameraCoords;//The coordinates of the top left corner of the "camera"
@@ -122,6 +123,9 @@ public class DrawPanel extends JPanel{
 		//center the camera on the new image
 		centerCameraOnImage();
 	}
+	public static BufferedImage getImageBeingWorkedOn() {
+		return imageBeingWorkedOn;
+	}
 	/**
 	 * Update the graphics displayed by the program.
 	 * 
@@ -139,5 +143,6 @@ public class DrawPanel extends JPanel{
 			g.drawRect(selection.x+cameraCoords.x, selection.y+cameraCoords.y, selection.width, selection.height);
 		}
 	}
+
 }
 
