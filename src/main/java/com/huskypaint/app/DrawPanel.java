@@ -1,11 +1,6 @@
 package com.huskypaint.app;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Point;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 
@@ -27,6 +22,8 @@ public class DrawPanel extends JPanel{
 	public static int windowTitleHeight = 30;
 	public static Rectangle selection;
 	public static Point selectionCoordinate;
+	static int width = 800;
+	static int height = 600;
 
 	public DrawPanel() {
 
@@ -143,6 +140,20 @@ public class DrawPanel extends JPanel{
 			g.drawRect(selection.x+cameraCoords.x, selection.y+cameraCoords.y, selection.width, selection.height);
 		}
 	}
+	static void setWidth(int w){
+		width = w;
+	}
+	static void setHeight(int h){
+		height = h;
+	}
+	static void resize(){
+		BufferedImage g = imageBeingWorkedOn;
 
+		BufferedImage newimage = createBlankImage(width, height);
+		Graphics g2 = newimage.createGraphics();
+		Image lmao = g.getScaledInstance(width, height, g.SCALE_DEFAULT);
+		newimage.getGraphics().drawImage(lmao, 0, 0, null);
+		setImageBeingWorkedOn(newimage);
+	}
 }
 

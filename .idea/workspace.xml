@@ -2,42 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec498140-aa57-4954-a48d-7bb44b629d8f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/huskypaint.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smilePoints.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/huskypaint/app/ExportFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/huskypaint/app/FileExport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/huskypaint/app/FillButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/huskypaint/app/output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/huskypaint/app/smilePoints.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/ExportFile$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/ExportFile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/FileExport$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/FileExport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/FillButton$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/FillButton.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/Window$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/Window$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/huskypaint/app/ResizeButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/huskypaint/app/Resizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huskypaint/app/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huskypaint/app/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huskypaint/app/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huskypaint/app/DrawPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huskypaint/app/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huskypaint/app/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/huskypaint/app/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/huskypaint/app/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/huskypaint/app/ColorPicker$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/ColorPicker$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/huskypaint/app/ColorPicker$ColorChangeListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/ColorPicker$ColorChangeListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/huskypaint/app/ColorPicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/ColorPicker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/huskypaint/app/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/Controller$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/huskypaint/app/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/huskypaint/app/DrawPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/DrawPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/huskypaint/app/FileIO$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/huskypaint/app/FileIO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/huskypaint/app/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/huskypaint/app/Window.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/huskypaint-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/huskypaint-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.huskypaint.app.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.huskypaint.app.AppTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.huskypaint.app.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.huskypaint.app.AppTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/huskypaint/app/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/huskypaint/app/AppTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,16 +17,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="DrawPanel.java" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DrawPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/DrawPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="85" column="31" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
+            <state relative-caret-position="395">
+              <caret line="154" column="45" selection-start-line="154" selection-start-column="45" selection-end-line="154" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4597#4598#0" expanded="true" />
                 <element signature="e#4629#4630#0" expanded="true" />
+                <element signature="e#5251#5252#0" expanded="true" />
+                <element signature="e#5263#5264#0" expanded="true" />
+                <element signature="e#5312#5313#0" expanded="true" />
+                <element signature="e#5329#5330#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,22 +44,61 @@
       <file leaf-file-name="FileExport.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/FileExport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
+            <state relative-caret-position="240">
               <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Resizer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Resizer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="75" selection-start-line="75" selection-end-line="75" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2236#2456#0" expanded="true" />
+                <element signature="e#2455#2456#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResizeButton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/ResizeButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="11" lean-forward="true" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#284#445#0" expanded="true" />
+                <element signature="e#444#445#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FillButton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/FillButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="840">
               <caret line="56" column="69" selection-start-line="56" selection-start-column="69" selection-end-line="56" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#812#820#0" expanded="true" />
-                <element signature="e#1353#1484#0" expanded="true" />
-                <element signature="e#1483#1484#0" expanded="true" />
+                <element signature="e#1393#1394#0" expanded="true" />
+                <element signature="e#1425#1426#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,17 +107,8 @@
       <file leaf-file-name="Window.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Window.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileIO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/FileIO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="8" selection-start-column="8" selection-end-column="8" />
+            <state relative-caret-position="270">
+              <caret line="52" column="45" lean-forward="true" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -115,6 +118,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="8" selection-start-column="8" selection-end-column="8" />
+              <folding>
+                <element signature="e#485#701#0" expanded="true" />
+                <element signature="e#700#701#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,7 +129,7 @@
       <file leaf-file-name="AppTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/huskypaint/app/AppTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="634">
+            <state relative-caret-position="720">
               <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -133,18 +140,32 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="no" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/Window.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/FileIO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/ColorPicker.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/huskypaint/app/AppTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/DrawPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/ResizeButton.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/Resizer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/Window.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/huskypaint/app/DrawPanel.java" />
       </list>
     </option>
   </component>
@@ -154,11 +175,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="20" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="y" value="28" />
+    <option name="width" value="960" />
+    <option name="height" value="1018" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -166,8 +189,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,6 +227,8 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,19 +335,20 @@
       <option name="presentableId" value="Default" />
       <updated>1541706206016</updated>
       <workItem from="1541706213561" duration="5554000" />
+      <workItem from="1544462103761" duration="4830000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6360000" />
+    <option name="totallyTimeSpent" value="11190000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="28" width="1920" height="1018" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.32943678" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.32887402" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -332,46 +356,24 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.19341126" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.30992195" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.18020834" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.32943678" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info id="Designer" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.18020834" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.3103082" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="UI Designer" order="1" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.32943678" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32943678" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,6 +383,79 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/DrawPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="85" column="31" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4597#4598#0" expanded="true" />
+            <element signature="e#4629#4630#0" expanded="true" />
+            <element signature="e#5251#5252#0" expanded="true" />
+            <element signature="e#5263#5264#0" expanded="true" />
+            <element signature="e#5312#5313#0" expanded="true" />
+            <element signature="e#5329#5330#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/FileExport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/FileIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/ColorPicker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+          <folding>
+            <element signature="e#485#701#0" expanded="true" />
+            <element signature="e#700#701#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/huskypaint/app/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="56" column="69" selection-start-line="56" selection-start-column="69" selection-end-line="56" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1393#1394#0" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/FileIO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -418,9 +493,8 @@
           <caret line="114" column="32" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#812#820#0" expanded="true" />
-            <element signature="e#1353#1484#0" expanded="true" />
-            <element signature="e#1483#1484#0" expanded="true" />
+            <element signature="e#1393#1394#0" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -433,12 +507,13 @@
             <element signature="imports" expanded="true" />
             <element signature="e#4597#4598#0" expanded="true" />
             <element signature="e#4629#4630#0" expanded="true" />
+            <element signature="e#5251#5252#0" expanded="true" />
+            <element signature="e#5263#5264#0" expanded="true" />
+            <element signature="e#5312#5313#0" expanded="true" />
+            <element signature="e#5329#5330#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/FileIO.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -447,16 +522,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/ColorPicker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/huskypaint/app/AppTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
+        <state relative-caret-position="720">
           <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -464,41 +532,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Window.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        <state relative-caret-position="840">
+          <caret line="56" column="69" selection-start-line="56" selection-start-column="69" selection-end-line="56" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1393#1394#0" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/FileExport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state relative-caret-position="240">
           <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/FillButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/ResizeButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="11" lean-forward="true" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#284#445#0" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/ColorPicker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+          <folding>
+            <element signature="e#485#701#0" expanded="true" />
+            <element signature="e#700#701#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="52" column="45" lean-forward="true" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Resizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2236#2456#0" expanded="true" />
+            <element signature="e#2455#2456#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/DrawPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="85" column="31" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
+        <state relative-caret-position="395">
+          <caret line="154" column="45" selection-start-line="154" selection-start-column="45" selection-end-line="154" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4597#4598#0" expanded="true" />
             <element signature="e#4629#4630#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/huskypaint/app/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="56" column="69" selection-start-line="56" selection-start-column="69" selection-end-line="56" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#812#820#0" expanded="true" />
-            <element signature="e#1353#1484#0" expanded="true" />
-            <element signature="e#1483#1484#0" expanded="true" />
+            <element signature="e#5251#5252#0" expanded="true" />
+            <element signature="e#5263#5264#0" expanded="true" />
+            <element signature="e#5312#5313#0" expanded="true" />
+            <element signature="e#5329#5330#0" expanded="true" />
           </folding>
         </state>
       </provider>
