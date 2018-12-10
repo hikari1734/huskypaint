@@ -14,6 +14,8 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import static com.huskypaint.app.Resizer.createAndShowResizer;
+
 /**
  * Window - This is the JFrame that contains the HuskyPaint programs GUI.
  *
@@ -86,6 +88,14 @@ public class Window extends JFrame{
             }
         });
 
+
+        JButton newImage = new JButton("New Image");
+        newImage.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                createAndShowResizer(0);
+            }
+        });
         //drawPanel.add(increaseSize);
         //drawPanel.add(decreaseSize);
 
@@ -97,6 +107,7 @@ public class Window extends JFrame{
         menu.add(file);
         menu.add(png);
         menu.add(jpg);
+        menu.add(newImage);
         menubar.add(menu);
 
         //brush sizes

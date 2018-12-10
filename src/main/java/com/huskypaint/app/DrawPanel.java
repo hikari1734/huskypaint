@@ -146,14 +146,24 @@ public class DrawPanel extends JPanel{
 	static void setHeight(int h){
 		height = h;
 	}
-	static void resize(){
-		BufferedImage g = imageBeingWorkedOn;
+	static void resize(int x){
+	    if ( x == 0) {
+            BufferedImage g = imageBeingWorkedOn;
 
-		BufferedImage newimage = createBlankImage(width, height);
-		Graphics g2 = newimage.createGraphics();
-		Image lmao = g.getScaledInstance(width, height, g.SCALE_DEFAULT);
-		newimage.getGraphics().drawImage(lmao, 0, 0, null);
-		setImageBeingWorkedOn(newimage);
+            BufferedImage newimage = createBlankImage(width, height);
+            Graphics g2 = newimage.createGraphics();
+            Image lmao = g.getScaledInstance(width, height, g.SCALE_DEFAULT);
+            newimage.getGraphics().drawImage(lmao, 0, 0, null);
+            setImageBeingWorkedOn(newimage);
+        } else {
+            BufferedImage g = imageBeingWorkedOn;
+
+            BufferedImage newimage = createBlankImage(width, height);
+            Graphics g2 = newimage.createGraphics();
+            Image lmao = g.getScaledInstance(width, height, g.SCALE_DEFAULT);
+            newimage.getGraphics().drawImage(lmao, 0, 0, null);
+            setImageBeingWorkedOn(createBlankImage(width, height));
+        }
 	}
 }
 
