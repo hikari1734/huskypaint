@@ -119,6 +119,8 @@ public class DrawPanel extends JPanel{
 		
 		//center the camera on the new image
 		centerCameraOnImage();
+
+		selection = null;
 	}
 	public static BufferedImage getImageBeingWorkedOn() {
 		return imageBeingWorkedOn;

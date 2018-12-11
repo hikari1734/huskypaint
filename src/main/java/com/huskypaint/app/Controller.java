@@ -1,10 +1,13 @@
 package com.huskypaint.app;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import java.awt.datatransfer.*;
+
+
+import java.awt.datatransfer.ClipboardOwner;
+import java.awt.event.*;
 import java.awt.geom.*;
 import java.util.ArrayList;
 
@@ -15,7 +18,7 @@ import javax.swing.*;
  * 
  * @author Matthew Finzel
  */
-public class Controller implements MouseListener,MouseMotionListener{
+public class Controller implements MouseListener,MouseMotionListener, KeyListener, ClipboardOwner {
 
 	JPanel drawPanel;//We need a reference to the DrawPanel used by the program.
 	public static Point coordinatesOfPreviousMouseEvent = null;
@@ -28,6 +31,38 @@ public class Controller implements MouseListener,MouseMotionListener{
 	public Controller() {
 
 	}
+    public void lostOwnership( Clipboard clip, Transferable trans ) {
+        System.out.println( "Lost Clipboard Ownership" );
+    }
+
+	public void keyPressed(KeyEvent e){
+		if (e.getKeyCode() == KeyEvent.VK_C&&((e.getModifiers() & KeyEvent.CTRL_MASK) != 0)){
+			System.out.println("woot!");
+			int x = DrawPanel.selection.x;
+			int y = DrawPanel.selection.y;
+			int w = DrawPanel.selection.width;
+			int h = DrawPanel.selection.height;
+            TransferableImage trans = new TransferableImage( DrawPanel.imageBeingWorkedOn.getSubimage(x, y, w, h) );
+            Clipboard c = Toolkit.getDefaultToolkit().getSystemClipboard();
+            c.setContents( trans, this );
+		}
+
+        if (e.getKeyCode() == KeyEvent.VK_V&&((e.getModifiers() & KeyEvent.CTRL_MASK) != 0)){
+            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+            try {
+                DrawPanel.setImageBeingWorkedOn((BufferedImage) clipboard.getData(DataFlavor.imageFlavor));
+            }
+            catch(Exception ex){}
+        }
+	}
+
+	public void keyReleased(KeyEvent e){
+        //System.out.println("Key released!");
+	}
+
+	public void keyTyped(KeyEvent e){
+        //System.out.println("Key typed!");
+	}
 
 	/**
 	 * Used to set the local variable "drawPanel" so that it refers to the DrawPanel 
@@ -38,8 +73,10 @@ public class Controller implements MouseListener,MouseMotionListener{
 	 */
 	public void setDrawPanel(JPanel panelRef) {
 		drawPanel = panelRef;
+        drawPanel.addKeyListener(this);
 		drawPanel.addMouseListener(this);
 		drawPanel.addMouseMotionListener(this);
+
 		Window.picker.addColorChangeListener(new ColorPicker.ColorChangeListener(){
 			@Override
 			public void colorChange(Color newColor){

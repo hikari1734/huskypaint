@@ -33,7 +33,12 @@ public class Window extends JFrame{
     public static ColorPicker picker  = new ColorPicker(Color.BLACK);
     public Window() {
         pane = getContentPane();
+        this.setFocusable(true);
+        setVisible(true);
         pane.setLayout(new BorderLayout());
+
+        ctrl = new Controller();
+        this.addKeyListener(ctrl);
     }
     /**
      * Main method. Sets basic things about the window that contains the program.
@@ -99,6 +104,7 @@ public class Window extends JFrame{
         //drawPanel.add(increaseSize);
         //drawPanel.add(decreaseSize);
 
+
         //create menubar
         JMenuBar menubar = new JMenuBar();
 
@@ -123,7 +129,7 @@ public class Window extends JFrame{
         frame.setFocusable(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        ctrl = new Controller();
+
         ctrl.setDrawPanel(drawPanel);
 
         //Make the window show up on top of whatever other windows are on the screen when the program starts.
